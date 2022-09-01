@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import PairsRedux from './PairsList';
-import InfoRedux from './PairsInfo';
+import logger from 'redux-logger';
+import PairsRedux from './Reducers';
 
 const store = configureStore({
   reducer: {
     mainFxPairs: PairsRedux,
-    infoFxPair: InfoRedux,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 export default store;
