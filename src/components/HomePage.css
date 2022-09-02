@@ -1,3 +1,123 @@
 .home-page {
   padding: 1rem;
+  color: white;
+}
+
+.top-part {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.top-part h1 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.top-buttons {
+  font-weight: 600;
+  width: 100%;
+  gap: 3px;
+  overflow-x: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+}
+
+.top-buttons button {
+  color: white;
+  flex: 0 0 17%;
+  object-fit: cover;
+  background-color: #0f86f4;
+  scroll-snap-align: center;
+  padding: 3px;
+  border-radius: 5px;
+  border: none;
+}
+
+.top-part h2 {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.list-container {
+  padding: 1rem 0;
+}
+
+.list-container h2 {
+  color: #ffd854;
+}
+
+.list {
+  padding: 1rem 0;
+  background-color: #051d32;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.pair-info {
+  color: white;
+  display: flex;
+  padding: 3px;
+  justify-content: space-between;
+}
+
+.num {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+
+.red-num {
+  color: #e93836;
+}
+
+.green-num {
+  color: #14b058;
+}
+
+@media (min-width: 768px) {
+  .home-page {
+    padding: 3rem;
+  }
+
+  .top-part {
+    gap: 1.5rem;
+  }
+
+  .top-part h1 {
+    font-size: 1.5rem;
+  }
+
+  .top-part h2 {
+    font-size: 1rem;
+  }
+
+  .top-buttons {
+    justify-content: center;
+    scroll-snap-type: none;
+  }
+
+  .top-buttons button {
+    flex: none;
+    object-fit: none;
+    scroll-snap-align: none;
+    width: 10%;
+  }
+
+  .list-container {
+    padding: 2rem 0;
+  }
+
+  .list {
+    gap: 1rem;
+  }
+
+  .pair-info {
+    font-size: 1.4rem;
+  }
+
+  .num {
+    font-size: 1.2rem;
+  }
 }
