@@ -27,10 +27,15 @@ const pairsSlice = createSlice({
     pairs: [],
     pairsFiltered: [],
     dataInfo: [],
+    currentPair: '',
     status: '',
     filter: 'USD',
   },
   reducers: {
+    allPairs(state) {
+      state.filter = 'ALL';
+      state.pairsFiltered = state.pairs;
+    },
     pairsUsd(state) {
       state.filter = 'USD';
       state.pairsFiltered = state.pairs.filter((pair) => pair.ticker.includes(state.filter));
@@ -84,7 +89,7 @@ const pairsSlice = createSlice({
 });
 
 export const {
-  dateUpdate,
+  allPairs,
   pairsAud,
   pairsCad,
   pairsChf,

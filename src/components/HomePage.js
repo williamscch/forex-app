@@ -2,7 +2,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
-  getFxPairs,
+  getFxPairInfo,
+  // getFxPairs,
+  allPairs,
   pairsAud,
   pairsCad,
   pairsChf,
@@ -12,15 +14,18 @@ import {
   pairsNzd,
   pairsUsd,
 } from '../redux/Reducers';
+import './HomePage.css';
 
 const HomePage = () => {
   const dispatch = useDispatch();
   let pairs = useSelector((state) => state.mainFxPairs.pairsFiltered);
-  const allPairs = useSelector((state) => state.mainFxPairs.pairs);
-  // const filter = useSelector((state) => state.mainFxPairs.filter);
+  const allPairsAr = useSelector((state) => state.mainFxPairs.pairs);
 
   const handleFiltering = (e) => {
     switch (e.target.value) {
+      case 'ALL':
+        dispatch(allPairs());
+        break;
       case 'USD':
         dispatch(pairsUsd());
         break;
@@ -54,15 +59,17 @@ const HomePage = () => {
   let pleaseSelect = '';
 
   if (pairs.length === 0) {
-    pairs = allPairs;
-    pleaseSelect = 'Please choose the currency pairs you are interested about';
+    pairs = allPairsAr;
+  } if (pairs.length > 100) {
+    pleaseSelect = 'You are watching the whole FX Pairs List, you can select your preferred instrument using the options above';
   }
 
   return (
-    <section>
-      <div>
-        <h1>hello my friend</h1>
-        <div>
+    <section className="home-page">
+      <div className="top-part">
+        <h1>This App covers some of the major currency pairs traded worldwide</h1>
+        <div className="top-buttons">
+          <button type="button" onClick={handleFiltering} value="ALL">All Pairs </button>
           <button type="button" onClick={handleFiltering} value="USD">USD Pairs </button>
           <button type="button" onClick={handleFiltering} value="EUR">EUR Pairs </button>
           <button type="button" onClick={handleFiltering} value="AUD">AUD Pairs </button>
@@ -72,27 +79,28 @@ const HomePage = () => {
           <button type="button" onClick={handleFiltering} value="JPY">JPY Pairs </button>
           <button type="button" onClick={handleFiltering} value="NZD">NZD Pairs </button>
         </div>
-        <button type="button" onClick={() => { dispatch(getFxPairs()); }}>
+        {/* <button type="button" onClick={() => { dispatch(getFxPairs()); }}>
           refresh
-        </button>
+        </button> */}
         <h2>{pleaseSelect}</h2>
       </div>
       <ul>
+        <h2>Instrument</h2>
         {pairs.map((pair) => (
           <li key={pair.ticker} className="pair-card">
-            <Link to="/info">
+            <Link to="/info" onClick={() => { dispatch(getFxPairInfo(pair.ticker.replace('/', ''))); }}>
               <div className="pair-info">
                 <h2>{pair.ticker}</h2>
-                <p>
-                  Princing Date:
-                  {' '}
-                  {pair.date.split('').slice(11).join('')}
-                </p>
                 <p>{pair.bid}</p>
                 <p>
                   {Math.round(pair.changes * 100 * 100) / 100}
                   %
                 </p>
+                {/* <p>
+                  Princing Date:
+                  {' '}
+                  {pair.date.split('').slice(11).join('')}
+                </p> */}
               </div>
             </Link>
           </li>
