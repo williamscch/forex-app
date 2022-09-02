@@ -70,6 +70,8 @@
   padding: 0.5rem;
   border-radius: 50%;
   font-size: 3.77rem;
+  align-self: center;
+  justify-self: center;
   background-color: #051d32;
 }
 
@@ -81,4 +83,30 @@
   color: #b2b7b8;
   margin: 0 auto;
   font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .info-page-section {
+    padding: 3rem;
+    gap: 4rem;
+  }
+  .go-back {
+    height: 3rem;
+    width: 25%;
+  }
+  .inner-button {
+    font-size: 1.5rem;
+  }
+  .info-content {
+    gap: 2rem;
+  }
+  .date {
+    font-size: 1.5rem;
+  }
+  .high-low h2 {
+    font-size: 2rem;
+  }
+  .open-close h3{
+    font-size: 1.5rem;
+  }
 }
