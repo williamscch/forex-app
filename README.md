@@ -60,7 +60,7 @@ You may also see any lint errors in the console.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/williamscch/forex-app/issues).
 
 ## Show your support
 
@@ -71,6 +71,7 @@ Give a ⭐️ if you like this project!
 - Microverse Module 3 React and Redux Capstone Project.
 - Project indications [here](https://github.com/microverseinc/curriculum-react-redux/blob/main/capstone/react_capstone.md).
 - Data Provided by Financial Modeling Prep [Link API](https://financialmodelingprep.com/developer/docs/).
+- Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
 
 ## 📝 License
 
