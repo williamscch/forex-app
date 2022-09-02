@@ -32,6 +32,9 @@ const pairsSlice = createSlice({
     filter: 'ALL',
   },
   reducers: {
+    stateBack(state) {
+      state.status = '';
+    },
     allPairs(state) {
       state.filter = 'ALL';
       state.pairsFiltered = state.pairs;
@@ -89,6 +92,7 @@ const pairsSlice = createSlice({
 });
 
 export const {
+  stateBack,
   allPairs,
   pairsAud,
   pairsCad,
