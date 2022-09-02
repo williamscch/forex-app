@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
+import './PairInfo.css';
 
 const PairInfo = () => {
   // const dispatch = useDispatch();
@@ -56,13 +57,17 @@ const PairInfo = () => {
   }
 
   return (
-    <>
+    <section className="info-page-section">
       <button type="button" className="go-back">
-        <BiArrowBack />
-        <Link to="/"> Go back</Link>
+        <Link to="/" className="inner-button">
+          {' '}
+          <BiArrowBack />
+          {' '}
+          Go back
+        </Link>
       </button>
       <div className="info-content">{content}</div>
-    </>
+    </section>
   );
 };
 
