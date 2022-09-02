@@ -55,7 +55,8 @@
   height: 5rem;
 }
 
-.high-low, .open-close {
+.high-low,
+.open-close {
   align-self: center;
   justify-self: center;
   display: flex;
@@ -90,23 +91,29 @@
     padding: 3rem;
     gap: 4rem;
   }
+
   .go-back {
     height: 3rem;
     width: 25%;
   }
+
   .inner-button {
     font-size: 1.5rem;
   }
+
   .info-content {
     gap: 2rem;
   }
+
   .date {
     font-size: 1.5rem;
   }
+
   .high-low h2 {
     font-size: 2rem;
   }
-  .open-close h3{
+
+  .open-close h3 {
     font-size: 1.5rem;
   }
 }

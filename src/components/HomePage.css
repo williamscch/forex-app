@@ -88,29 +88,35 @@
   .top-part h1 {
     font-size: 1.5rem;
   }
+
   .top-part h2 {
     font-size: 1rem;
   }
+
   .top-buttons {
     justify-content: center;
     scroll-snap-type: none;
-    overflow-x: none;
   }
+
   .top-buttons button {
     flex: none;
     object-fit: none;
     scroll-snap-align: none;
     width: 10%;
   }
+
   .list-container {
     padding: 2rem 0;
   }
+
   .list {
     gap: 1rem;
   }
-  .pair-info{
+
+  .pair-info {
     font-size: 1.4rem;
   }
+
   .num {
     font-size: 1.2rem;
   }
