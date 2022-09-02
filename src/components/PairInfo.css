@@ -1,3 +1,7 @@
 div {
   display: flex;
 }
+
+.info-content {
+    color: white;
+}
