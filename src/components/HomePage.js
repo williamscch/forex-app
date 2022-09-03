@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
